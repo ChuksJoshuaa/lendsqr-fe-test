@@ -1,0 +1,30 @@
+$light-color: #f4f4f4;
+$primary-color: #FAFBFB;
+$secondary-color: #F7F7F7;
+$dark-color: #20232A;
+$font: "Rajdhani", sans-serif;
+$login-button-color: rgb(3, 201, 215);
+$text-color: rgb(15 23 42);
+$box-light-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+$box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: $light-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    font-family: $font;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90vw;
+}
