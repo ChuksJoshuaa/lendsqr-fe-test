@@ -1,0 +1,141 @@
+$light-color: #f4f4f4;
+$primary-color: #fff;
+$secondary-color: #F7F7F7;
+$dark-color: #20232A;
+$font: "Rajdhani", sans-serif;
+$login-button-color: rgb(3, 201, 215);
+$text-color: rgb(15 23 42);
+$box-light-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+$box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+.nav-container {
+    overflow: hidden;
+    height: 4.3em;
+    width: 100vw;
+    background-color: $primary-color;
+
+    &-head {
+        padding-left: 2em;
+        padding-right: 2em;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        align-items: center;
+    }
+
+    &-search {
+        display: block;
+        min-width: 200px;
+        width: 400px;
+        padding-top: 1em;
+        margin-right: 1em;
+        border-top-right-radius: 20px;
+
+        .input-group {
+            position: relative;
+
+            .btn {
+                position: absolute;
+                right: 0;
+                top: -28px;
+                font-size: .75rem;
+                // border-top-right-radius: 20px;
+            }
+
+            .search-input {
+                height: 2.4em;
+            }
+
+            .search-button {
+                background-color: $login-button-color;
+                height: 3em;
+                color: #fff;
+                margin-top: 2.4em;
+                padding-left: 1.4em;
+                padding-right: 1.4em;
+                z-index: 9999;
+                
+            }
+
+            
+        }
+    }
+
+    .profile {
+        &-head {
+            img {
+                margin-top: -0.5em;
+            }
+            h4 {
+                color: $text-color;
+                font-weight: bold;
+                font-size: 1em;
+                font-family: sans-serif;
+            }
+        }
+
+        &-bell {
+            font-size: 1.2em;
+        }
+
+        &-toggle {
+            visibility: hidden;
+            font-size: 2em;
+            font-weight: bolder;
+            padding-right: 0;
+            color: $text-color;
+            background-color: $primary-color;
+            border: 0;
+        }
+    }
+
+    
+}
+
+
+@media screen and (max-width: 1300px) {
+   .nav-container {
+        &-head {
+            padding-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .nav-container {
+        &-head {
+            padding-top: 1.1em;
+            padding-right: 0.5em;
+        }
+
+        &-search {
+            display: none;
+        }
+
+        .profile {
+            &-head {
+                position: absolute;
+                left: 40%;
+            }
+
+            &-toggle {
+                visibility: visible;
+                position: absolute;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    .nav-container {
+        position: absolute;
+        &-head {
+            width: 100vw;
+
+        }
+        .profile {
+            &-head {
+                visibility: hidden;
+            }
+        }
+    }
+}

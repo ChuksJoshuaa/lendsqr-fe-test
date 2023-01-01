@@ -9,7 +9,7 @@ import { useAppDispatch } from "./redux/hooks";
 function App() {
   const dispatch = useAppDispatch();
 
-  const fetchUsers = async () => {
+  const fetchUsers = async (): Promise<void> => {
     try {
       await axios
         .get(`${fetchUrl}`)

@@ -1,0 +1,20 @@
+$light-color: #f4f4f4;
+$primary-color: #fff;
+$secondary-color: #F7F7F7;
+$dark-color: #20232A;
+$font: "Rajdhani", sans-serif;
+$login-button-color: rgb(3, 201, 215);
+$text-color: rgb(15 23 42);
+$box-light-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+$box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+
+.main-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.sidebar-container {
+    background-color: $primary-color;
+    height: 100vh;
+}

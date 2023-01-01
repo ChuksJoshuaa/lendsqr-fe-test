@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../redux/hooks";
-import { iconUrl, loginUrl, logoUrl } from "../utils/image";
+import { loginUrl, logoUrl } from "../utils/image";
 import { saveUser } from "../utils/localStorage";
 
 const Login = () => {
@@ -126,7 +126,7 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <button
-                  className="btn btn-link input-btn text-uppercase focus-visible"
+                  className="btn btn-link input-btn text-uppercase"
                   onClick={handleShowPassword}
                   type="button"
                 >

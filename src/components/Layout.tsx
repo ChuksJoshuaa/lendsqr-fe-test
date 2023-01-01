@@ -13,7 +13,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <Navbar />
       <div>
         <div>{isSidebarOpen ? <Sidebar /> : null}</div>
-        <div>{children}</div>
+        <div className="main-container">
+          <div>
+            <Sidebar />
+          </div>
+          <div>{children}</div>
+        </div>
       </div>
     </>
   );
