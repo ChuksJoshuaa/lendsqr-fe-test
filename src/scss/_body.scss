@@ -7,14 +7,169 @@ $login-button-color: rgb(3, 201, 215);
 $text-color: rgb(15 23 42);
 $box-light-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+$main-text-color: #213f7d;
 
+
+.padding {
+    padding-right: 0em;
+}
+
+.span {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: medium;
+    font-size: 1em;
+}
+
+.sidebar-header {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: medium;
+    font-size: 1.1em;
+}
+
+.active-normal {
+    border-radius: 5px;
+    margin-bottom: 1em;
+    text-decoration: none;
+    padding-left: 1.5em;
+}
 
 .main-container {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 23% 77%;
 }
 
 .sidebar-container {
     background-color: $primary-color;
     height: 100vh;
+    padding-bottom: 2em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+   
+
+    &-head {
+        display: flex;
+        padding-top: 0.7em;
+        padding-left: 1.5em;
+        font-size: 1em;
+
+        .dash {
+            @extend .sidebar-header;
+        }
+
+        h3 {
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        .chevron-down {
+           font-size: 1.4em;
+        }
+    }
+
+    .sidebar-container-body {
+        @extend .padding;
+
+        p {
+            font-size: 1em;
+            color: $text-color;
+            font-weight: bold;
+            padding-left: 1.5em;
+        }
+
+        .active {
+            @extend .active-normal;
+            
+        }
+
+        .active:hover {
+            background-color: $secondary-color;
+        }
+
+        .normal {
+            @extend .active-normal;
+        }
+
+        .normal:hover {
+            background-color: $secondary-color;
+        }
+        
+
+        .span-link {
+            @extend .span;
+        }
+
+        .option {
+            color: $main-text-color;
+            font-weight: medium;
+        }
+    
+    }
+
+     .dashboard {
+        background-color: rgba(3, 201, 215, 0.1);
+        border-left: 3px solid rgb(3, 201, 215);
+
+        .dash {
+            color: $main-text-color;
+        }
+    }
+    
+    
+
+    &:hover {
+        overflow-y: auto;
+    }
+}
+
+//Home 
+
+.layout-container {
+    position: relative;
+
+    .ratings-container {
+        &-icon {
+          border-radius: 50%;
+          width: 2em;
+          opacity: 0.9;
+        }
+
+        h5 {
+            color: $main-text-color;
+            font-weight: 500;
+        }
+
+        h4 {
+             color: $main-text-color;
+            font-weight: bolder;
+        }
+    }
+
+}
+
+
+
+@media screen and (max-width: 990px){
+    .layout-container {
+        top: 0.3%;
+    }
+    .show-sidebar {
+        display: none;
+    }
+
+    .hold {
+        margin-top: 0.5em;
+    }
+
+    .main-container {
+        display: grid;
+        grid-template-columns: 0 100%;
+    }
+
+}
+@media screen and (max-width: 499px){
+    .layout-container {
+        top: 5%;
+    }
+
 }

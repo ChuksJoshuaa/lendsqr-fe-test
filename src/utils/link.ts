@@ -3,3 +3,15 @@ export const linkData =
 
 export const fetchUrl =
   "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users";
+
+export const activeLink =
+  "d-flex align-items-center gap-2 pl-4 pt-2 pb-2 fs-6 active";
+
+export const normalLink =
+  "d-flex align-items-center gap-2 pl-4 pt-2 pb-2 fs-5 normal";
+
+export const randy = () => Math.floor(Math.random() * 1000000);
+
+export const NumberChange = (digit: number) => {
+  return digit.toLocaleString();
+};

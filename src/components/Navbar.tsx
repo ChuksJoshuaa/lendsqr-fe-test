@@ -48,7 +48,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="profile d-flex justify-content-end align-items-center">
+        <div className="profile">
           <div className="d-flex justify-content-end profile-head">
             <a href="" className="mx-3 mt-2 font-weight-bold fs-7">
               Docs

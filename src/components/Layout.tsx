@@ -8,16 +8,17 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   const { isSidebarOpen } = useAppSelector((state) => state.user);
+
   return (
     <>
       <Navbar />
+      {/* <div>{isSidebarOpen ? <Sidebar /> : null}</div> */}
       <div>
-        <div>{isSidebarOpen ? <Sidebar /> : null}</div>
         <div className="main-container">
           <div>
             <Sidebar />
           </div>
-          <div>{children}</div>
+          <div className="layout-container">{children}</div>
         </div>
       </div>
     </>
