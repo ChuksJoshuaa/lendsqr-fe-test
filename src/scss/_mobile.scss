@@ -48,6 +48,23 @@ $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
        }
    }
 
+   .profile-icon {
+    display: none;
+      img {
+        border-radius: 50%;
+      }
+      h4 {
+        font-weight: 500;
+        color: $main-text-color;
+        font-size: 1.5em;
+      }
+
+      h4:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+   }
+
    .container {
      
     &-head {
@@ -97,7 +114,7 @@ $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
    }
 
-   @media screen and (max-width: 700px) {
+   @media screen and (max-width: 995px) {
         .nav-container {
             &-head {
                 padding-top: 1.1em;
@@ -114,6 +131,14 @@ $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
                     left: 40%;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 580px){
+    .mobile-sidebar-container{
+        .profile-icon {
+            display: flex;
         }
     }
 }
@@ -145,5 +170,12 @@ $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
                 }
             }
         }
+
+        .profile-icon {
+            h4 {
+                font-size: 1.2em;
+            }
+        }
+
     }
 }

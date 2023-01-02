@@ -5,16 +5,22 @@ import { openSidebar } from "../redux/features/users/userSlice";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { BiShoppingBag, BiChevronDown } from "react-icons/bi";
-import { BsHouseDoorFill } from "react-icons/bs";
+import { BsBell, BsHouseDoorFill } from "react-icons/bs";
 import { NavLink, useNavigate } from "react-router-dom";
 import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
+import { getUser } from "../utils/localStorage";
 
 const MobileSidebar = () => {
   const dispatch = useDispatch();
+
   const [search, setSearch] = useState("");
   const [selectedOption, setSelectedOption] = useState("Users");
   const navigate = useNavigate();
+  let avatar = getUser()?.avatar;
+  let userName = getUser()?.name;
+  let id = getUser()?.id;
+  const userId = Number(id);
 
   const handleSearch = () => {
     if (!search) {
@@ -30,7 +36,15 @@ const MobileSidebar = () => {
   return (
     <div className="mobile-sidebar-container">
       <div className="mt-3 d-flex justify-content-between head">
-        <img src={logoUrl} alt="title-logo" className="px-2" />
+        <img
+          src={logoUrl}
+          alt="title-logo"
+          className="px-2"
+          onClick={() => {
+            navigate("/home");
+            dispatch(openSidebar(false));
+          }}
+        />
         <button
           className="profile-toggle btn btn-secondary p-3"
           type="button"
@@ -60,6 +74,24 @@ const MobileSidebar = () => {
             </button>
           </div>
         </div>
+      </div>
+
+      <div
+        className="mx-4 mt-4 profile-icon align-items-center"
+        onClick={() => {
+          navigate(`/single-user/${userId}`);
+          dispatch(openSidebar(false));
+        }}
+      >
+        <img
+          src={avatar}
+          alt="avatar"
+          className="mx-1"
+          height="52px"
+          width="52px"
+        />
+        <h4 className="mt-3 mx-1">{userName}</h4>
+        <BsBell className="mt-2 fs-4" />
       </div>
 
       <div className="container">
