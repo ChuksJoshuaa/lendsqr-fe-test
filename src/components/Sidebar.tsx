@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { BiChevronDown, BiShoppingBag } from "react-icons/bi";
 import { BsHouseDoorFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
+import { openSidebar } from "../redux/features/users/userSlice";
 import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
 
 const Sidebar = () => {
   const [selectedOption, setSelectedOption] = useState("Users");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div className="sidebar-container show-sidebar">
       <div className="pt-3">
@@ -39,7 +42,10 @@ const Sidebar = () => {
                 <NavLink
                   to={`${link.name === "Users" ? "/home" : ""}`}
                   key={link.name}
-                  onClick={() => setSelectedOption(link.name)}
+                  onClick={() => {
+                    setSelectedOption(link.name);
+                    dispatch(openSidebar(false));
+                  }}
                   style={() => ({
                     backgroundColor:
                       link.name === selectedOption

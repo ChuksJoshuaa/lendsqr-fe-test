@@ -33,19 +33,21 @@ $main-text-color: #213f7d;
     padding-left: 1.5em;
 }
 
+.sidebar-css {
+    padding-bottom: 2em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .main-container {
     display: grid;
     grid-template-columns: 23% 77%;
 }
 
 .sidebar-container {
-    background-color: $primary-color;
+    @extend .sidebar-css;
+     background-color: $primary-color;
     height: 1020px;
-    padding-bottom: 2em;
-    overflow-x: hidden;
-    overflow-y: hidden;
-
-   
 
     &-head {
         display: flex;
@@ -128,6 +130,7 @@ $main-text-color: #213f7d;
     position: relative;
 
     .ratings-container {
+       
         &-icon {
           border-radius: 50%;
           width: 2em;
@@ -149,7 +152,7 @@ $main-text-color: #213f7d;
 
 
 
-@media screen and (max-width: 1222px){
+@media screen and (max-width: 1262px){
     .layout-container {
         top: 0.3%;
     }
@@ -226,13 +229,12 @@ $main-text-color: #213f7d;
 
 }
 
-
-
-@media screen and (max-width: 780px){
+@media screen and (max-width: 850px){
     .pagination-container {
         grid-template-columns: 1fr;
         place-items: center;
         margin-bottom: 1em;
     }
 }
+
 
