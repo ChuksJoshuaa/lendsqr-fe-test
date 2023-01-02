@@ -7,13 +7,17 @@ import { BiChevronDown } from "react-icons/bi";
 import { getUser } from "../utils/localStorage";
 import { useAppDispatch } from "../redux/hooks";
 import { openSidebar } from "../redux/features/users/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [search, setSearch] = useState("");
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   let avatar = getUser()?.avatar;
   let userName = getUser()?.name;
+  let id = getUser()?.id;
+  const userId = Number(id);
 
   const handleSearch = () => {
     if (!search) {
@@ -27,7 +31,12 @@ const Navbar = () => {
     <div className="nav-container">
       <div className="nav-container-head">
         <div className="d-flex justify-content-between align-items-center">
-          <img src={logoUrl} alt="title-logo" className="head-image px-3" />
+          <img
+            src={logoUrl}
+            alt="title-logo"
+            className="head-image px-3"
+            onClick={() => navigate("/home")}
+          />
           <div className="form-group nav-container-search">
             <div className="input-group">
               <input
@@ -49,7 +58,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="profile">
-          <div className="d-flex justify-content-end profile-head">
+          <div
+            className="d-flex justify-content-end profile-head"
+            onClick={() => {
+              navigate(`/single-user/${userId}`);
+            }}
+          >
             <a href="" className="mx-3 mt-2 font-weight-bold fs-7">
               Docs
             </a>
