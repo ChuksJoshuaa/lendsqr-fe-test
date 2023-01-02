@@ -13,7 +13,7 @@ const Login = () => {
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const { allUsers } = useAppSelector((state) => state.user);
+  const { loginUsers } = useAppSelector((state) => state.user);
 
   const handleEnterKeyPress = (e: React.KeyboardEvent) => {
     e.preventDefault();
@@ -63,7 +63,7 @@ const Login = () => {
     setEmail("");
     setPassword("");
 
-    const checkUser = () => allUsers.find((item) => item.email === email);
+    const checkUser = () => loginUsers.find((item) => item.email === email);
 
     if (!checkUser()) {
       setErrors(

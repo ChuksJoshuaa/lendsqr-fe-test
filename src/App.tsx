@@ -2,9 +2,10 @@ import axios from "axios";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Error, Home, Login, SinglePage } from "./pages";
-import { Loader, storeUser } from "./redux/features/users/userSlice";
+import { Loader, saveUsers, storeUser } from "./redux/features/users/userSlice";
 import { useAppDispatch } from "./redux/hooks";
-import paginate, { fetchUrl, linkData } from "./utils/link";
+import paginate from "./utils/conversions";
+import { fetchUrl, linkData } from "./utils/link";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -15,8 +16,9 @@ function App() {
         .get(`${fetchUrl}`)
         .then(function (response) {
           let data = response.data;
-          data = paginate(data);
-          dispatch(storeUser(data));
+          dispatch(saveUsers(data));
+          let newData = paginate(data);
+          dispatch(storeUser(newData));
           dispatch(Loader(false));
         })
         .catch(function (error) {

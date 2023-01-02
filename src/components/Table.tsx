@@ -3,8 +3,9 @@ import { AiOutlineMore } from "react-icons/ai";
 import { FiWifi } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../redux/hooks";
+import { changeTime } from "../utils/conversions";
 import { NewUserProps, UserProps } from "../utils/types";
-import { changeTime, selectCount } from "../utils/userData";
+import { selectCount } from "../utils/userData";
 import Pagination from "./Pagination";
 
 const Table = () => {

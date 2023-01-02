@@ -2,7 +2,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { GrMoney } from "react-icons/gr";
-import { NumberChange, randy } from "./link";
+import { NumberChange, randy } from "./conversions";
 
 export const RatingsData = [
   {

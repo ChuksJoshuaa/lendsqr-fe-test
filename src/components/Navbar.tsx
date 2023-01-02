@@ -12,8 +12,8 @@ const Navbar = () => {
   const [search, setSearch] = useState("");
   const dispatch = useAppDispatch();
 
-  let avatar = getUser().avatar;
-  let userName = getUser().name;
+  let avatar = getUser()?.avatar;
+  let userName = getUser()?.name;
 
   const handleSearch = () => {
     if (!search) {
