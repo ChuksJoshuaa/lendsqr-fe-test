@@ -34,7 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/hotels/:id" element={<SinglePage />} />
+          <Route path="/single-user/:id" element={<SinglePage />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>

@@ -53,3 +53,14 @@ export interface IProps {
   isSidebarOpen: boolean;
   allUsers: UserProps[];
 }
+
+export interface NewUserProps {
+  id: string;
+  orgName: string;
+  userName: string;
+  email: string;
+  phoneNumber: string;
+  dateJoined: string;
+  status: string;
+  // line: string;
+}

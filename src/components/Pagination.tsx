@@ -1,6 +1,10 @@
-import React from "react";
+import { NewUserProps } from "../utils/types";
 
-const Pagination = () => {
+interface IProps {
+  options: NewUserProps[];
+}
+
+const Pagination = ({ options }: IProps) => {
   return <div>Pagination</div>;
 };
 

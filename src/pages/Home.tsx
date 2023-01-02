@@ -1,4 +1,4 @@
-import { Ratings } from "../components";
+import { Ratings, Table } from "../components";
 import Layout from "../components/Layout";
 
 const Home = () => {
@@ -8,6 +8,7 @@ const Home = () => {
         <h1 className="hold"></h1>
         <h3>Users</h3>
         <Ratings />
+        <Table />
       </div>
     </Layout>
   );

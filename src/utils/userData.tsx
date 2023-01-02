@@ -13,7 +13,7 @@ export const changeTime = (utc: string) => {
   return `${dateChange} ${timeChange}`;
 };
 
-export const RatingsData = [
+export const UsersData = [
   {
     id: randy(),
     icon: <FiWifi />,

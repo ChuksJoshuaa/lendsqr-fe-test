@@ -40,7 +40,7 @@ $main-text-color: #213f7d;
 
 .sidebar-container {
     background-color: $primary-color;
-    height: 100vh;
+    height: 1000px;
     padding-bottom: 2em;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -172,4 +172,29 @@ $main-text-color: #213f7d;
         top: 5%;
     }
 
+}
+
+.table-container {
+     margin-top: 2em;
+    background-color: #fff;
+
+    .table-head {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .table-title {
+       padding-right: 0.4em;
+       font-weight: 700;
+       text-transform: uppercase;
+       font-size: 0.9em;
+    }
+
+    .date-joined {
+        font-size: 0.8em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        color: $main-text-color;
+        font-weight: 400;
+    }
 }
