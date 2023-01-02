@@ -45,19 +45,17 @@ const Pagination = ({ setPage, page }: IProps) => {
             </li>
             {allUsers.map((item, index) => {
               return (
-                <>
-                  <li className="page-item" key={index}>
-                    <a
-                      className={`page-link ${
-                        index === page ? "active-btn" : null
-                      }`}
-                      onClick={() => handlePage(index)}
-                      key={index}
-                    >
-                      {index + 1}
-                    </a>
-                  </li>
-                </>
+                <li className="page-item" key={index}>
+                  <a
+                    className={`page-link ${
+                      index === page ? "active-btn" : null
+                    }`}
+                    onClick={() => handlePage(index)}
+                    key={index}
+                  >
+                    {index + 1}
+                  </a>
+                </li>
               );
             })}
             <li className="page-item">
