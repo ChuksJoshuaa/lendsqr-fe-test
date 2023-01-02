@@ -27,7 +27,7 @@ const SinglePage = () => {
   };
   useEffect(() => {
     fetchUser();
-  }, []);
+  }, [userId]);
 
   const navigate = useNavigate();
 
