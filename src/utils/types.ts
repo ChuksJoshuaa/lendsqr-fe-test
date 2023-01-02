@@ -52,6 +52,7 @@ export interface UserProps {
 export interface IProps {
   isSidebarOpen: boolean;
   allUsers: UserProps[];
+  loading: boolean;
 }
 
 export interface NewUserProps {

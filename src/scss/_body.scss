@@ -40,7 +40,7 @@ $main-text-color: #213f7d;
 
 .sidebar-container {
     background-color: $primary-color;
-    height: 1000px;
+    height: 1020px;
     padding-bottom: 2em;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -149,7 +149,7 @@ $main-text-color: #213f7d;
 
 
 
-@media screen and (max-width: 990px){
+@media screen and (max-width: 1222px){
     .layout-container {
         top: 0.3%;
     }
@@ -176,7 +176,20 @@ $main-text-color: #213f7d;
 
 .table-container {
      margin-top: 2em;
-    background-color: #fff;
+    background-color: $primary-color;
+    box-shadow: $box-light-shadow;
+
+    // .table-responsive {
+    //     table {
+    //        thead {
+    //           tr {
+    //             th {
+    //                 display: flex;
+    //             }
+    //           }
+    //        }
+    //     }
+    // }
 
     .table-head {
         display: flex;
@@ -198,3 +211,40 @@ $main-text-color: #213f7d;
         font-weight: 400;
     }
 }
+
+.pagination-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    
+
+    &-select {
+        background-color: $primary-color;
+        border-radius: 5px;
+        padding: 0.4em;
+        border: 0.5px solid $secondary-color;
+        box-shadow: $box-light-shadow;
+    }
+
+    .select {
+       width: 80px;
+       border-radius: 2px;
+    }
+
+    .active-btn {
+        background: hsl(205, 86%, 17%);
+        color: #fff;
+    }
+
+}
+
+
+
+@media screen and (max-width: 780px){
+    .pagination-container {
+        grid-template-columns: 1fr;
+        place-items: center;
+        margin-bottom: 1em;
+    }
+}
+
