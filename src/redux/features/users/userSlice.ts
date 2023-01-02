@@ -4,6 +4,8 @@ import { IProps } from "../../../utils/types";
 const initialState: IProps = {
   isSidebarOpen: false,
   allUsers: [],
+  loginUsers: [],
+  loading: true,
 };
 
 export const userSlice = createSlice({
@@ -15,12 +17,20 @@ export const userSlice = createSlice({
       state.isSidebarOpen = action.payload;
     },
 
-    storeUser: (state, action) => {
+    storeUsers: (state, action) => {
       state.allUsers = action.payload;
+    },
+
+    saveUsers: (state, action) => {
+      state.loginUsers = action.payload;
+    },
+
+    Loader: (state, action) => {
+      state.loading = action.payload;
     },
   },
 });
 
-export const { openSidebar, storeUser } = userSlice.actions;
+export const { openSidebar, storeUsers, Loader, saveUsers } = userSlice.actions;
 
 export default userSlice.reducer;

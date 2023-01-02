@@ -1,0 +1,149 @@
+$light-color: #f4f4f4;
+$primary-color: #fff;
+$secondary-color: #F7F7F7;
+$dark-color: #20232A;
+$font: "Rajdhani", sans-serif;
+$login-button-color: rgb(3, 201, 215);
+$text-color: rgb(15 23 42);
+$box-light-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+$box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+.mobile-sidebar-container {
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 30vw;
+   background-color: $primary-color;
+   z-index: 50;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   height: 100vh;
+   min-width: 400px;
+   
+   .head {
+     border-bottom: 1px solid silver;
+   }
+
+   .profile {
+    margin-top: 0.5em;
+    &-toggle {
+            font-size: 1.6em;
+            font-weight: bolder;
+            padding-right: 0;
+            color: $text-color;
+            background-color: $primary-color;
+            border: 0;
+        }
+   }
+
+   .nav-container {
+       &-search {
+            display: none;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 4em;
+            max-width: 600px;
+       }
+   }
+
+   .container {
+     
+    &-head {
+        display: flex;
+        padding-top: 0.7em;
+        padding-left: 1.5em;
+        font-size: 1em;
+    }
+
+    .sidebar-container-body {
+        @extend .padding;
+
+        p {
+            font-size: 1em;
+            color: $text-color;
+            font-weight: bold;
+            padding-left: 1.5em;
+        }
+
+        .active {
+            @extend .active-normal;
+            
+        }
+
+        .active:hover {
+            background-color: $secondary-color;
+        }
+
+        .normal {
+            @extend .active-normal;
+        }
+
+        .normal:hover {
+            background-color: $secondary-color;
+        }
+        
+
+        .span-link {
+            @extend .span;
+        }
+
+        .option {
+            color: $main-text-color;
+            font-weight: medium;
+        }
+    
+    }
+   }
+
+   @media screen and (max-width: 700px) {
+        .nav-container {
+            &-head {
+                padding-top: 1.1em;
+                padding-right: 0.5em;
+            }
+
+            &-search {
+                display: block;
+            }
+
+            .profile {
+                &-head {
+                    position: absolute;
+                    left: 40%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    .mobile-sidebar-container {
+        width: 100vw;
+        min-width: 200px;
+        overflow-y: scroll;
+
+        .nav-container {
+            &-search {
+                width: 100%;
+            }
+        }
+
+        .container {
+            .sidebar-container {
+                &-head {
+                    padding-left: 0;
+                }
+
+                &-body {
+                    padding-left: 0;
+
+                    p{
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -52,6 +52,8 @@ export interface UserProps {
 export interface IProps {
   isSidebarOpen: boolean;
   allUsers: UserProps[];
+  loginUsers: UserProps[];
+  loading: boolean;
 }
 
 export interface NewUserProps {
@@ -62,5 +64,4 @@ export interface NewUserProps {
   phoneNumber: string;
   dateJoined: string;
   status: string;
-  // line: string;
 }

@@ -52,8 +52,7 @@ $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
                 margin-top: 2.4em;
                 padding-left: 1.4em;
                 padding-right: 1.4em;
-                z-index: 9999;
-                
+                z-index: 20;            
             }
 
             
@@ -108,7 +107,7 @@ $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1262px) {
     .nav-container {
         .profile {
             justify-content: start;

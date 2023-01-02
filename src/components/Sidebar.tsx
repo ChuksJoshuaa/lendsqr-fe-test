@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { BiChevronDown, BiShoppingBag } from "react-icons/bi";
 import { BsHouseDoorFill } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import { openSidebar } from "../redux/features/users/userSlice";
 import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
 
 const Sidebar = () => {
-  const [selectedOption, setSelectedOption] = useState("dashboard");
-
+  const [selectedOption, setSelectedOption] = useState("Users");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   return (
     <div className="sidebar-container show-sidebar">
       <div className="pt-3">
@@ -20,7 +23,10 @@ const Sidebar = () => {
           className={`sidebar-container-head mt-3 ${
             selectedOption === "dashboard" ? "dashboard" : ""
           }`}
-          onClick={() => setSelectedOption("dashboard")}
+          onClick={() => {
+            setSelectedOption("dashboard");
+            navigate("/home");
+          }}
         >
           <BsHouseDoorFill className="dash" />
           <h3 className="mx-2 dash">Dashboard</h3>
@@ -34,9 +40,12 @@ const Sidebar = () => {
               <p className="mt-4 text-uppercase">{item.title}</p>
               {item.links.map((link) => (
                 <NavLink
-                  to=""
+                  to={`${link.name === "Users" ? "/home" : ""}`}
                   key={link.name}
-                  onClick={() => setSelectedOption(link.name)}
+                  onClick={() => {
+                    setSelectedOption(link.name);
+                    dispatch(openSidebar(false));
+                  }}
                   style={() => ({
                     backgroundColor:
                       link.name === selectedOption
