@@ -17,7 +17,7 @@ export const userSlice = createSlice({
       state.isSidebarOpen = action.payload;
     },
 
-    storeUser: (state, action) => {
+    storeUsers: (state, action) => {
       state.allUsers = action.payload;
     },
 
@@ -31,6 +31,6 @@ export const userSlice = createSlice({
   },
 });
 
-export const { openSidebar, storeUser, Loader, saveUsers } = userSlice.actions;
+export const { openSidebar, storeUsers, Loader, saveUsers } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Navbar, Sidebar } from "./index";
+import { MobileSidebar, Navbar, Sidebar } from "./index";
 import { useAppSelector } from "../redux/hooks";
 
 interface LayoutProps {
@@ -12,7 +12,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Navbar />
-      {/* <div>{isSidebarOpen ? <Sidebar /> : null}</div> */}
+      <div>{isSidebarOpen ? <MobileSidebar /> : null}</div>
       <div>
         <div className="main-container">
           <div>
