@@ -46,7 +46,7 @@ const Pagination = ({ setPage, page }: IProps) => {
             {allUsers.map((item, index) => {
               return (
                 <>
-                  <li className="page-item">
+                  <li className="page-item" key={item.id}>
                     <a
                       className={`page-link ${
                         index === page ? "active-btn" : null

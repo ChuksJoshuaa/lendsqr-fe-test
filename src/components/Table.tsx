@@ -41,8 +41,8 @@ const Table = () => {
   return (
     <>
       <div className="table-container">
-        <div className="table-responsive">
-          <table className="table">
+        <div className="table-responsive ">
+          <table className="table table-striped">
             <thead>
               <tr>
                 <th scope="col" className="text-nowrap">
