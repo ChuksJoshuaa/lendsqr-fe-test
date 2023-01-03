@@ -21,6 +21,7 @@ $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         padding-top: 1em;
         padding-left: 1.3em;
         padding-right: 1.3em;
+        border-bottom: 1px solid silver;
 
         h3{
             color: $text-color;
@@ -54,4 +55,44 @@ $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
             }
         }
     }
+}
+
+@media screen and (max-width: 680px){
+    .personal-information {
+   
+
+    &-head {
+        
+        h3{
+            color: $text-color;
+            font-weight: bold;
+        }
+
+        &-body {
+        
+            h5 {
+                font-size: 1rem;
+                
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+}
+
+@media screen and (max-width: 315px){
+    .personal-information {
+    &-head { 
+        &-body {
+          &-main {
+            .email {
+                font-size: 0.9rem;
+            }
+          }
+        }
+    }
+}
 }

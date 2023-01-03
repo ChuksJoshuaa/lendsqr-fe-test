@@ -1,3 +1,4 @@
+import { TbCurrencyNaira } from "react-icons/tb";
 import { UserProps } from "../utils/types";
 
 interface IProps {
@@ -24,7 +25,7 @@ const PersonalInformation = ({ singleData }: IProps) => {
           </div>
           <div className="personal-information-head-body-main mb-2">
             <h5>Email Address</h5>
-            <h3>{singleData?.email}</h3>
+            <h3 className="email">{singleData?.email}</h3>
           </div>
           <div className="personal-information-head-body-main mx-2 mb-2">
             <h5>Bvn</h5>
@@ -45,6 +46,45 @@ const PersonalInformation = ({ singleData }: IProps) => {
           <div className="personal-information-head-body-main mb-2">
             <h5>Type of residence</h5>
             <h3>Parent's Apartment</h3>
+          </div>
+        </div>
+      </div>
+      <div className="personal-information-head">
+        <h3>Education and Employment</h3>
+
+        <div className="personal-information-head-body">
+          <div className="personal-information-head-body-main mb-2">
+            <h5>Level of Education</h5>
+            <h3>{singleData?.education?.level}</h3>
+          </div>
+
+          <div className="personal-information-head-body-main mx-2 mb-2">
+            <h5>Employment Status</h5>
+            <h3>{singleData?.education?.employmentStatus}</h3>
+          </div>
+          <div className="personal-information-head-body-main mb-2">
+            <h5>Sector of Employment</h5>
+            <h3 className="email">{singleData?.education?.sector}</h3>
+          </div>
+          <div className="personal-information-head-body-main mx-2 mb-2">
+            <h5>Duration of Employment</h5>
+            <h3>{singleData?.education?.duration}</h3>
+          </div>
+          <div className="personal-information-head-body-main mb-2">
+            <h5>Office email</h5>
+            <h3>{singleData?.education?.officeEmail}</h3>
+          </div>
+          <div className="personal-information-head-body-main mx-2 mb-2">
+            <h5>Monthly income</h5>
+            <h3>
+              <TbCurrencyNaira />
+              {singleData?.education.monthlyIncome[0]} - <TbCurrencyNaira />
+              {singleData?.education.monthlyIncome[1]}
+            </h3>
+          </div>
+          <div className="personal-information-head-body-main mb-2">
+            <h5>loam repayment</h5>
+            <h3>{singleData?.education?.loanRepayment}</h3>
           </div>
         </div>
       </div>
