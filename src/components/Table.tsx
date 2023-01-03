@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineMore } from "react-icons/ai";
 import { FiWifi } from "react-icons/fi";
 import { Link } from "react-router-dom";
@@ -36,8 +36,6 @@ const Table = () => {
   };
 
   let options = myOption();
-
-  if (loading) return <div>Loading...</div>;
 
   return (
     <>
@@ -105,8 +103,8 @@ const Table = () => {
         </div>
       </div>
       <div className="mt-4 pagination-container">
-        <div className="d-flex mb-4 pagination-container-select">
-          <div>Showing</div>
+        <div className="d-flex mb-4 pagination-container-select flex-wrap">
+          <div className="select-text">Showing</div>
           <div className="mx-2">
             <select
               className="select"
@@ -125,7 +123,7 @@ const Table = () => {
               ))}
             </select>
           </div>
-          <div className="">Out of {selectCount.length}</div>
+          <div className="select-text">Out of {selectCount.length}</div>
         </div>
         <Pagination page={page} setPage={setPage} />
       </div>

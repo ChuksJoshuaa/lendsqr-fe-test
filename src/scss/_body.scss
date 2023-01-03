@@ -237,4 +237,16 @@ $main-text-color: #213f7d;
     }
 }
 
+@media screen and (max-width: 330px){
+    .pagination-container {
+        .select {
+            width: 60px;
+        }
+
+        .select-text {
+            font-size: 0.9rem;
+        }
+    }
+}
+
 
