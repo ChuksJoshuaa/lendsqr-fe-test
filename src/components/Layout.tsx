@@ -5,9 +5,10 @@ import { useAppSelector } from "../redux/hooks";
 interface LayoutProps {
   children: any;
   useClass: boolean;
+  changeHeight: boolean;
 }
 
-const Layout: FC<LayoutProps> = ({ children, useClass }) => {
+const Layout: FC<LayoutProps> = ({ children, useClass, changeHeight }) => {
   const { isSidebarOpen } = useAppSelector((state) => state.user);
 
   return (
@@ -17,7 +18,7 @@ const Layout: FC<LayoutProps> = ({ children, useClass }) => {
       <div>
         <div className="main-container">
           <div>
-            <Sidebar />
+            <Sidebar changeHeight={changeHeight} />
           </div>
           <div className={`${useClass ? "layout-container" : ""}`}>
             {children}

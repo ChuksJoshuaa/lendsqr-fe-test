@@ -47,7 +47,7 @@ $main-text-color: #213f7d;
 .sidebar-container {
     @extend .sidebar-css;
      background-color: $primary-color;
-    height: 1020px;
+    // height: 1020px;
 
     &-head {
         display: flex;

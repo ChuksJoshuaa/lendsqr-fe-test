@@ -40,7 +40,7 @@ const SinglePage = () => {
 
   if (Object.keys(singleData).length === 0)
     return (
-      <Layout useClass={false}>
+      <Layout useClass={false} changeHeight={true}>
         <div className="single-page-container">
           <Loader />
         </div>
@@ -48,7 +48,7 @@ const SinglePage = () => {
     );
 
   return (
-    <Layout useClass={false}>
+    <Layout useClass={false} changeHeight={false}>
       <div className="single-page-container">
         <h3 className="hold">
           <div className="d-flex mb-3" onClick={() => navigate("/home")}>
