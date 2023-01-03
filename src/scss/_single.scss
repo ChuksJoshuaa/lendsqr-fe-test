@@ -7,3 +7,270 @@ $login-button-color: rgb(3, 201, 215);
 $text-color: rgb(15 23 42);
 $box-light-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 $box-dark-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+
+.text-check {
+    font-size: 1.4rem;
+    color: $text-color;
+    font-weight: bold;
+}
+
+.paragraph-check {
+    font-size: 1rem;
+    color: $text-color;
+    font-weight: medium;
+}
+
+.single-page-container {
+    padding-top: 2em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+
+    &-body {
+        margin-top: 2em;
+        height: 250px;
+        position: relative;
+        background: $primary-color;
+        box-shadow: $box-light-shadow;
+        width: 100%;
+
+        .main-body {
+            padding-top: 1em;
+            display: flex;
+            flex-direction: column;
+            padding-left: 1.3em;
+
+            &-head {
+                display: flex;
+                justify-content: flex-start;
+
+                &-profile {
+                    display: flex;
+                    justify-content: space-between;
+
+                    img {
+                        border-radius: 50%;
+                        height: 92px;
+                        width:92px;
+                        padding: 0.9em;
+                        background-color: $secondary-color;
+                    }
+
+                    .name {
+                        border-right: 1px solid silver;
+                        padding-right: 3em;
+
+                        h3 {
+                            @extend .text-check;
+                        }
+
+                        p{
+                            @extend .paragraph-check;
+                        }
+                    }
+
+                    
+                }
+
+                .tier {
+                    border-right: 1px solid silver;
+                    padding-right: 1.4em;
+                    margin-right: 2em;
+                    margin-left: 2em;
+
+                    h4 {
+                        font-size: 1.3rem;
+                        font-weight: medium;
+                    }
+
+                    &-icons {
+                        
+                        .icon {
+                            color: gold;
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+
+                .bank {
+                    h4 {
+                        @extend .text-check;
+                        margin-top: 0.9rem;
+                        padding-top: 0.3em;
+                    }
+
+                    p{
+                        @extend .paragraph-check;
+                        
+                    }
+                }
+            }
+
+            
+        }
+
+        .body-shield {
+                position: absolute;
+                padding-left: 1.3em; 
+                bottom: 0;
+
+                &-body {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+
+                    h3 {
+                        font-size: 1.5rem;
+                        margin-right: 2em;
+                        color: $text-color;
+                    }
+
+                    .back {
+                        color: $login-button-color;
+                        border-bottom: 2px solid $login-button-color;
+                    }
+                }
+            }
+    }
+}
+
+@media screen and (max-width: 1230px){
+    .single-page-container {
+        &-body {
+            .body-shield {
+                &-body {
+                    h3 {
+                        font-size: 1.2rem;
+                        margin-right: 1em;
+                    }
+                }
+             }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 908px){
+    .single-page-container {
+        &-body {
+           .main-body {
+              &-head {
+                &-profile {
+                    .name {
+                        padding-right: 0.4em;
+                    }
+
+                    
+                }
+                .tier {
+                    margin-right: 0.5em;
+                    margin-left: 0.5em;
+                    padding-right: 0.7em;
+                }
+              }
+           }
+        }
+    }
+}
+
+
+@media screen and (max-width: 800px){
+    .single-page-container {
+        &-body {
+            height: 350px;
+           .main-body {
+              &-head {
+                padding-right: 0.5em;
+                flex-direction: column;
+                justify-content: flex-start;
+
+                &-profile {
+                    display: flex;
+                    justify-content: flex-start;
+                    .name {
+                        border-right: 0;
+                    }
+                }
+                .tier {
+                    margin-right: 0em;
+                    margin-left: 0em;
+                    border-right: 0
+                }
+              }
+           }
+        }
+    }
+}
+
+
+@media screen and (max-width: 581px){
+    .single-page-container {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        padding-top: 5em;
+         &-body {
+            width: auto;
+            padding-bottom: 1em;
+
+            // .body-shield {
+            //     padding-right: 0.4em;
+            //     padding-left: 0.5em;
+            // }
+        }
+    }
+}
+
+
+@media screen and (max-width: 340px){
+    .single-page-container {
+        .main-body {
+            &-head {
+                &-profile {
+                    img {
+                           padding: 0.5em;
+                           height: 80px;
+                           width: 80px;
+                        }
+                    .name {
+                        
+                        h3 {
+                            font-size: 1rem;
+                            margin-left: 0.2em;
+                        }
+                    }
+                }
+                h3{
+                    margin-bottom: 1em;
+                }
+                .bank {
+                    h4 {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 315px){
+    .single-page-container {
+        &-body {
+            height: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 287px){
+    .single-page-container {
+        &-head {
+             .head-button {
+                    &-key {
+                        margin-bottom: 1em;
+                    }
+                }
+        }
+    }
+}

@@ -5,5 +5,15 @@ import Ratings from "./Ratings";
 import MobileSidebar from "./MobileSidebar";
 import Table from "./Table";
 import Loader from "./Loader";
+import PersonalInformation from "./PersonalInformation";
 
-export { Navbar, Sidebar, Pagination, MobileSidebar, Ratings, Table, Loader };
+export {
+  Navbar,
+  Sidebar,
+  Pagination,
+  MobileSidebar,
+  Ratings,
+  Table,
+  Loader,
+  PersonalInformation,
+};

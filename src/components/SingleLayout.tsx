@@ -2,13 +2,11 @@ import { FC } from "react";
 import { MobileSidebar, Navbar, Sidebar } from "./index";
 import { useAppSelector } from "../redux/hooks";
 
-interface LayoutProps {
+interface SingleLayoutProps {
   children: any;
-  useClass: boolean;
-  changeHeight: boolean;
 }
 
-const Layout: FC<LayoutProps> = ({ children, useClass, changeHeight }) => {
+const SingleLayout: FC<SingleLayoutProps> = ({ children }) => {
   const { isSidebarOpen } = useAppSelector((state) => state.user);
 
   return (
@@ -18,15 +16,13 @@ const Layout: FC<LayoutProps> = ({ children, useClass, changeHeight }) => {
       <div>
         <div className="main-container">
           <div>
-            <Sidebar changeHeight={changeHeight} />
+            <Sidebar />
           </div>
-          <div className={`${useClass ? "layout-container" : ""}`}>
-            {children}
-          </div>
+          <div>{children}</div>
         </div>
       </div>
     </>
   );
 };
 
-export default Layout;
+export default SingleLayout;

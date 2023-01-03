@@ -47,7 +47,7 @@ $main-text-color: #213f7d;
 .sidebar-container {
     @extend .sidebar-css;
      background-color: $primary-color;
-    height: 1020px;
+    // height: 1020px;
 
     &-head {
         display: flex;
@@ -234,6 +234,18 @@ $main-text-color: #213f7d;
         grid-template-columns: 1fr;
         place-items: center;
         margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 330px){
+    .pagination-container {
+        .select {
+            width: 60px;
+        }
+
+        .select-text {
+            font-size: 0.9rem;
+        }
     }
 }
 
