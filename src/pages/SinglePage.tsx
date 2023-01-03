@@ -12,7 +12,7 @@ import { UsersData } from "../utils/userData";
 
 const SinglePage = () => {
   const { id } = useParams();
-  const [singleData, setSingleData] = useState<UserProps | any>({});
+  const [singleData, setSingleData] = useState<UserProps>({} as UserProps);
   const [selectedOption, setSelectedOption] = useState("General Details");
 
   const userId = Number(id);
@@ -121,7 +121,7 @@ const SinglePage = () => {
             </div>
           </div>
 
-          <PersonalInformation />
+          <PersonalInformation singleData={singleData} />
         </h3>
       </div>
     </Layout>
