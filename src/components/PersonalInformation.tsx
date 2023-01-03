@@ -64,7 +64,7 @@ const PersonalInformation = ({ singleData }: IProps) => {
           </div>
           <div className="personal-information-head-body-main mb-2">
             <h5>Sector of Employment</h5>
-            <h3 className="email">{singleData?.education?.sector}</h3>
+            <h3>{singleData?.education?.sector}</h3>
           </div>
           <div className="personal-information-head-body-main mx-2 mb-2">
             <h5>Duration of Employment</h5>
@@ -72,7 +72,7 @@ const PersonalInformation = ({ singleData }: IProps) => {
           </div>
           <div className="personal-information-head-body-main mb-2">
             <h5>Office email</h5>
-            <h3>{singleData?.education?.officeEmail}</h3>
+            <h3 className="email">{singleData?.education?.officeEmail}</h3>
           </div>
           <div className="personal-information-head-body-main mx-2 mb-2">
             <h5>Monthly income</h5>
@@ -85,6 +85,25 @@ const PersonalInformation = ({ singleData }: IProps) => {
           <div className="personal-information-head-body-main mb-2">
             <h5>loam repayment</h5>
             <h3>{singleData?.education?.loanRepayment}</h3>
+          </div>
+        </div>
+      </div>
+
+      <div className="personal-information-head">
+        <h3>Socials</h3>
+
+        <div className="personal-information-head-body">
+          <div className="personal-information-head-body-main mb-2">
+            <h5>Twitter</h5>
+            <h3>{singleData?.socials?.twitter}</h3>
+          </div>
+          <div className="personal-information-head-body-main mx-2 mb-2">
+            <h5>facebook</h5>
+            <h3>{singleData?.socials?.facebook}</h3>
+          </div>
+          <div className="personal-information-head-body-main mb-2">
+            <h5>instagram</h5>
+            <h3 className="email">{singleData?.socials?.instagram}</h3>
           </div>
         </div>
       </div>
