@@ -107,6 +107,32 @@ const PersonalInformation = ({ singleData }: IProps) => {
           </div>
         </div>
       </div>
+
+      <div className="personal-information-head">
+        <h3>Guarantor</h3>
+
+        <div className="personal-information-head-body">
+          <div className="personal-information-head-body-main mb-2">
+            <h5>Full name</h5>
+            <h3>
+              {singleData?.guarantor?.firstName}{" "}
+              {singleData?.guarantor?.lastName}
+            </h3>
+          </div>
+          <div className="personal-information-head-body-main mx-2 mb-2">
+            <h5>phone number</h5>
+            <h3>{singleData?.guarantor?.phoneNumber}</h3>
+          </div>
+          <div className="personal-information-head-body-main mb-2">
+            <h5>Email address</h5>
+            <h3 className="email">{singleData?.guarantor?.address}</h3>
+          </div>
+          <div className="personal-information-head-body-main mx-2 mb-2">
+            <h5>Relationship</h5>
+            <h3>sister</h3>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
