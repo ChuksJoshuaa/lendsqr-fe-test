@@ -1,71 +1,36 @@
-import { FiWifi } from "react-icons/fi";
 import { randy } from "./conversions";
 
 export const UsersData = [
   {
     id: randy(),
-    icon: <FiWifi />,
-    name: "Organization",
+    name: "General Details",
   },
   {
     id: randy(),
-    icon: <FiWifi />,
-    name: "Username",
+    name: "Documents",
   },
   {
     id: randy(),
-    icon: <FiWifi />,
-    name: "Email",
+    name: "Bank Details",
   },
   {
     id: randy(),
-    icon: <FiWifi />,
-    name: "Phone Number",
+    name: "Loans",
   },
   {
     id: randy(),
-    icon: <FiWifi />,
-    name: "Date Joined",
+    name: "Savings",
   },
   {
     id: randy(),
-    icon: <FiWifi />,
-    name: "Status",
+    name: "App and System",
   },
 ];
 
 export const selectCount = [
   {
     id: randy(),
-    value: 1,
-  },
-  {
-    id: randy(),
-    value: 2,
-  },
-  {
-    id: randy(),
-    value: 3,
-  },
-  {
-    id: randy(),
-    value: 4,
-  },
-  {
-    id: randy(),
-    value: 5,
-  },
-  {
-    id: randy(),
-    value: 6,
-  },
-  {
-    id: randy(),
-    value: 7,
-  },
-  {
-    id: randy(),
-    value: 8,
+    value: 10,
   },
   {
     id: randy(),
@@ -73,6 +38,34 @@ export const selectCount = [
   },
   {
     id: randy(),
-    value: 10,
+    value: 8,
+  },
+  {
+    id: randy(),
+    value: 7,
+  },
+  {
+    id: randy(),
+    value: 6,
+  },
+  {
+    id: randy(),
+    value: 5,
+  },
+  {
+    id: randy(),
+    value: 4,
+  },
+  {
+    id: randy(),
+    value: 3,
+  },
+  {
+    id: randy(),
+    value: 2,
+  },
+  {
+    id: randy(),
+    value: 1,
   },
 ];
