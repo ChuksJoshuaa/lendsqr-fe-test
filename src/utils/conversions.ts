@@ -31,3 +31,42 @@ const paginate = (followers: UserProps[]) => {
 };
 
 export default paginate;
+
+export const checkDateRange = (utc: string) => {
+  let utcValue = utc.slice(0, 4);
+  let newUtcValue = Number(utcValue);
+
+  let status = "Unactive";
+
+  if (newUtcValue > 2000 && newUtcValue <= 2030) {
+    status = "Active";
+  }
+
+  if (newUtcValue > 2030 && newUtcValue <= 2060) {
+    status = "Pending";
+  }
+
+  if (newUtcValue > 2060 && newUtcValue <= 2080) {
+    status = "Blacklisted";
+  }
+
+  return status;
+};
+
+export const colorChange = (status: string) => {
+  let color = "status-red";
+
+  if (status === "Unactive") {
+    color = "status-black";
+  }
+
+  if (status === "Active") {
+    color = "status-green";
+  }
+
+  if (status === "Pending") {
+    color = "status-yellow";
+  }
+
+  return color;
+};

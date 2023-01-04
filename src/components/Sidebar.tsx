@@ -21,7 +21,7 @@ const Sidebar: React.FC<SidebarProps> = ({ changeHeight, checkPageType }) => {
   return (
     <div
       className="sidebar-container show-sidebar"
-      style={{ height: `${changeHeight === true ? "1020px" : "1350px"}` }}
+      style={{ height: `${changeHeight === true ? "1115px" : "1350px"}` }}
     >
       <div className="pt-3">
         <div className="sidebar-container-head">

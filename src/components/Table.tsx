@@ -4,7 +4,7 @@ import { FiWifi } from "react-icons/fi";
 import { FilterModal, Modal } from "./index";
 import { openModal } from "../redux/features/users/userSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { changeTime } from "../utils/conversions";
+import { changeTime, checkDateRange, colorChange } from "../utils/conversions";
 import { NewUserProps, UserProps } from "../utils/types";
 import { selectCount } from "../utils/userData";
 import Pagination from "./Pagination";
@@ -45,7 +45,7 @@ const Table = ({ checkPageType }: IProps) => {
         userName: item.userName,
         email: item.email,
         dateJoined: changeTime(item.createdAt),
-        status: "Active",
+        status: checkDateRange(item.createdAt),
       }));
     }
     return myArray;
@@ -56,7 +56,7 @@ const Table = ({ checkPageType }: IProps) => {
   return (
     <>
       <div className="table-container">
-        <div className="table-responsive ">
+        <div className="table-responsive">
           <table className="table table-striped">
             <thead>
               <tr>
@@ -106,7 +106,15 @@ const Table = ({ checkPageType }: IProps) => {
                   <td className="date-joined">{item.email}</td>
                   <td className="date-joined">{item.phoneNumber}</td>
                   <td className="date-joined">{item.dateJoined}</td>
-                  <td className="date-joined">{item.status}</td>
+                  <td className="date-joined">
+                    <button
+                      className={`${colorChange(item.status)} btn-sm`}
+                      disabled
+                      style={{ borderRadius: "20px 20px" }}
+                    >
+                      {item.status}
+                    </button>
+                  </td>
                   <td className="date-joined">
                     <div
                       onClickCapture={() => {

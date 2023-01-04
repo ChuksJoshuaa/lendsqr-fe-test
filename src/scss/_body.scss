@@ -44,6 +44,16 @@ $main-text-color: #213f7d;
     grid-template-columns: 23% 77%;
 }
 
+.status {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: bold;
+    box-shadow: 0;
+    background-color: $secondary-color;
+}
+
 .sidebar-container {
     @extend .sidebar-css;
      background-color: $primary-color;
@@ -200,7 +210,26 @@ $main-text-color: #213f7d;
         padding-bottom: 1em;
         color: $main-text-color;
         font-weight: 400;
+
+        .status-red {
+            @extend .status;
+            color: #f50535;
+            
+        }
+        .status-yellow {
+            @extend .status;
+            color: #f7d705;
+        }
+        .status-black {
+            @extend .status;
+            color: #222;
+        }
+        .status-green {
+            @extend .status;
+            color: green;
+        }
     }
+
 }
 
 .pagination-container {

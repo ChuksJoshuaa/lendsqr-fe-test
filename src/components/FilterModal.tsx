@@ -139,7 +139,7 @@ const FilterModal = () => {
                 Reset
               </button>
               <button
-                className="btn btn-info mx-2"
+                className="btn btn-success mx-2"
                 type="button"
                 onClick={handleFilter}
                 style={{ paddingRight: "1.5em", paddingLeft: "1.5em" }}
