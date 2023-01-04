@@ -122,7 +122,11 @@ const Table = ({ checkPageType }: IProps) => {
                         setChosenUser(item.id);
                       }}
                       className="font-weight-bold"
-                      style={{ color: "#222" }}
+                      style={{
+                        color: "#222",
+                        fontWeight: "bold",
+                        fontSize: "1.5em",
+                      }}
                     >
                       <AiOutlineMore />
                     </div>

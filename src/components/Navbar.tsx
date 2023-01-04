@@ -36,7 +36,7 @@ const Navbar = () => {
             alt="title-logo"
             className="head-image px-3"
             onClick={() => {
-              navigate("/home");
+              navigate("/dashboard");
               dispatch(openModal(false));
             }}
           />

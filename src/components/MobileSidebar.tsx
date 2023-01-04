@@ -47,7 +47,7 @@ const MobileSidebar = ({ checkPageType }: MobileSidebarProps) => {
           alt="title-logo"
           className="px-2"
           onClickCapture={() => {
-            navigate("/home");
+            navigate("/dashboard");
             dispatch(openSidebar(false));
             dispatch(openModal(false));
           }}
