@@ -249,4 +249,44 @@ $main-text-color: #213f7d;
     }
 }
 
+.modal-container {
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    height: 140px;
+    width: 190px;
+    background-color: $primary-color;
+    z-index: 40;
+    box-shadow: $box-light-shadow;
+
+    &-head {
+        padding: 1em;
+
+        &-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .modal-head {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                text-decoration: none;
+                margin-bottom: 1rem;
+
+                .modal-icon {
+                    font-size: 1.1rem;
+                    color: $text-color
+                }
+
+                h3 {
+                    font-size: 1.1rem;
+                    color: $text-color;
+                    text-decoration: none;
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}
 

@@ -1,22 +1,35 @@
 import { useEffect, useState } from "react";
 import { AiOutlineMore } from "react-icons/ai";
 import { FiWifi } from "react-icons/fi";
-import { Link } from "react-router-dom";
-import { useAppSelector } from "../redux/hooks";
+import { Modal } from "./index";
+import { openModal } from "../redux/features/users/userSlice";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { changeTime } from "../utils/conversions";
 import { NewUserProps, UserProps } from "../utils/types";
 import { selectCount } from "../utils/userData";
 import Pagination from "./Pagination";
 
+interface TableProps {
+  followers: UserProps[] | [];
+  setFollowers: React.SetStateAction<UserProps[] | any>;
+  itemSize: string;
+  chosenUser: string;
+  setItemSize: React.SetStateAction<string>;
+}
+
 const Table = () => {
-  const { allUsers, loading } = useAppSelector((state) => state.user);
-  const [followers, setFollowers] = useState<UserProps[]>([]);
+  const { allUsers, loading, showModal } = useAppSelector(
+    (state) => state.user
+  );
+  const [followers, setFollowers] = useState([] as TableProps["followers"]);
   const [page, setPage] = useState(0);
-  const [itemSize, setItemSize] = useState(10);
+  const [itemSize, setItemSize] = useState("10" as TableProps["itemSize"]);
+  const [chosenUser, setChosenUser] = useState("" as TableProps["chosenUser"]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (loading) return;
-    setFollowers(allUsers[page] as any);
+    setFollowers(allUsers[page] as TableProps["setFollowers"]);
   }, [loading, page]);
 
   const myOption = () => {
@@ -83,7 +96,7 @@ const Table = () => {
               </tr>
             </thead>
             <tbody>
-              {options.slice(0, itemSize)?.map((item) => (
+              {options.slice(0, Number(itemSize))?.map((item) => (
                 <tr key={item.id}>
                   <td className="date-joined">{item.orgName}</td>
                   <td className="date-joined">{item.userName}</td>
@@ -92,16 +105,25 @@ const Table = () => {
                   <td className="date-joined">{item.dateJoined}</td>
                   <td className="date-joined">{item.status}</td>
                   <td className="date-joined">
-                    <Link to={`/single-user/${item.id}`}>
+                    <div
+                      onClick={() => {
+                        dispatch(openModal(true));
+                        setChosenUser(item.id);
+                      }}
+                      className="font-weight-bold"
+                      style={{ color: "#222" }}
+                    >
                       <AiOutlineMore />
-                    </Link>
+                    </div>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        {showModal ? <Modal chosenUser={chosenUser} /> : null}
       </div>
+
       <div className="mt-4 pagination-container">
         <div className="d-flex mb-4 pagination-container-select flex-wrap">
           <div className="select-text">Showing</div>
@@ -109,7 +131,10 @@ const Table = () => {
             <select
               className="select"
               onChange={(e) =>
-                setItemSize((e.target as HTMLSelectElement).value as any)
+                setItemSize(
+                  (e.target as HTMLSelectElement)
+                    .value as TableProps["itemSize"]
+                )
               }
             >
               {selectCount?.map((item) => (

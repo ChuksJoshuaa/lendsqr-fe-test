@@ -54,6 +54,7 @@ export interface IProps {
   allUsers: UserProps[];
   loginUsers: UserProps[];
   loading: boolean;
+  showModal: boolean;
 }
 
 export interface NewUserProps {

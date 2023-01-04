@@ -7,7 +7,11 @@ import { openSidebar } from "../redux/features/users/userSlice";
 import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
 
-const Sidebar = ({ changeHeight }: any) => {
+interface SidebarProps {
+  changeHeight: boolean;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ changeHeight }) => {
   const [selectedOption, setSelectedOption] = useState("Users");
   const navigate = useNavigate();
   const dispatch = useDispatch();
