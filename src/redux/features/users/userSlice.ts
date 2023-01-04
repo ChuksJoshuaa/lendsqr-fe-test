@@ -6,10 +6,11 @@ const initialState: IProps = {
   allUsers: [],
   loginUsers: [],
   loading: true,
+  showModal: false,
 };
 
 export const userSlice = createSlice({
-  name: "counter",
+  name: "users",
 
   initialState,
   reducers: {
@@ -28,9 +29,14 @@ export const userSlice = createSlice({
     Loader: (state, action) => {
       state.loading = action.payload;
     },
+
+    openModal: (state, action) => {
+      state.showModal = action.payload;
+    },
   },
 });
 
-export const { openSidebar, storeUsers, Loader, saveUsers } = userSlice.actions;
+export const { openSidebar, storeUsers, Loader, saveUsers, openModal } =
+  userSlice.actions;
 
 export default userSlice.reducer;

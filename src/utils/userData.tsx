@@ -69,3 +69,22 @@ export const selectCount = [
     value: 1,
   },
 ];
+
+export const statusData = [
+  {
+    id: randy(),
+    name: "Active",
+  },
+  {
+    id: randy(),
+    name: "Inactive",
+  },
+  {
+    id: randy(),
+    name: "Pending",
+  },
+  {
+    id: randy(),
+    name: "Blacklisted",
+  },
+];

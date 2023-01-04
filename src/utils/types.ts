@@ -54,6 +54,7 @@ export interface IProps {
   allUsers: UserProps[];
   loginUsers: UserProps[];
   loading: boolean;
+  showModal: boolean;
 }
 
 export interface NewUserProps {
@@ -63,5 +64,10 @@ export interface NewUserProps {
   email: string;
   phoneNumber: string;
   dateJoined: string;
+  status: string;
+}
+
+export interface FilterOrganizationProps {
+  orgName: string;
   status: string;
 }

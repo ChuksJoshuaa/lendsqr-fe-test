@@ -1,7 +1,7 @@
 import { logoUrl } from "../utils/image";
 import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { openSidebar } from "../redux/features/users/userSlice";
+import { openModal, openSidebar } from "../redux/features/users/userSlice";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { BiShoppingBag, BiChevronDown } from "react-icons/bi";
@@ -11,11 +11,17 @@ import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
 import { getUser } from "../utils/localStorage";
 
-const MobileSidebar = () => {
+interface MobileSidebarProps {
+  checkPageType: boolean;
+}
+
+const MobileSidebar = ({ checkPageType }: MobileSidebarProps) => {
   const dispatch = useDispatch();
 
-  const [search, setSearch] = useState("");
-  const [selectedOption, setSelectedOption] = useState("Users");
+  const [search, setSearch] = useState<string>("");
+  const [selectedOption, setSelectedOption] = useState<string>(
+    `${checkPageType ? "dashboard" : "Users"}`
+  );
   const navigate = useNavigate();
   let avatar = getUser()?.avatar;
   let userName = getUser()?.name;
@@ -40,9 +46,10 @@ const MobileSidebar = () => {
           src={logoUrl}
           alt="title-logo"
           className="px-2"
-          onClick={() => {
-            navigate("/home");
+          onClickCapture={() => {
+            navigate("/dashboard");
             dispatch(openSidebar(false));
+            dispatch(openModal(false));
           }}
         />
         <button
@@ -78,9 +85,10 @@ const MobileSidebar = () => {
 
       <div
         className="mx-4 mt-4 profile-icon align-items-center"
-        onClick={() => {
+        onClickCapture={() => {
           navigate(`/single-user/${userId}`);
           dispatch(openSidebar(false));
+          dispatch(openModal(false));
         }}
       >
         <img
@@ -108,7 +116,8 @@ const MobileSidebar = () => {
             onClick={() => {
               setSelectedOption("dashboard");
               dispatch(openSidebar(false));
-              navigate("/home");
+              dispatch(openModal(false));
+              navigate("/dashboard");
             }}
           >
             <BsHouseDoorFill className="dash" />
@@ -128,6 +137,7 @@ const MobileSidebar = () => {
                     onClick={() => {
                       setSelectedOption(link.name);
                       dispatch(openSidebar(false));
+                      dispatch(openModal(false));
                     }}
                     style={() => ({
                       backgroundColor:

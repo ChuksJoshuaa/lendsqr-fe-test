@@ -6,19 +6,30 @@ interface LayoutProps {
   children: any;
   useClass: boolean;
   changeHeight: boolean;
+  checkPageType: boolean;
 }
 
-const Layout: FC<LayoutProps> = ({ children, useClass, changeHeight }) => {
+const Layout: FC<LayoutProps> = ({
+  children,
+  useClass,
+  changeHeight,
+  checkPageType,
+}) => {
   const { isSidebarOpen } = useAppSelector((state) => state.user);
 
   return (
     <>
       <Navbar />
-      <div>{isSidebarOpen ? <MobileSidebar /> : null}</div>
+      <div>
+        {isSidebarOpen ? <MobileSidebar checkPageType={checkPageType} /> : null}
+      </div>
       <div>
         <div className="main-container">
           <div>
-            <Sidebar changeHeight={changeHeight} />
+            <Sidebar
+              changeHeight={changeHeight}
+              checkPageType={checkPageType}
+            />
           </div>
           <div className={`${useClass ? "layout-container" : ""}`}>
             {children}
