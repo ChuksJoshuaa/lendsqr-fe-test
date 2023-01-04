@@ -1,6 +1,7 @@
 import { Dispatch } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { useAppSelector } from "../redux/hooks";
+import { openModal } from "../redux/features/users/userSlice";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
 interface IProps {
   setPage: Dispatch<React.SetStateAction<number>>;
@@ -9,8 +10,10 @@ interface IProps {
 
 const Pagination = ({ setPage, page }: IProps) => {
   const { allUsers, loading } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
 
   const nextPage = () => {
+    dispatch(openModal(false));
     setPage((oldPage) => {
       let nextPage = oldPage + 1;
       if (nextPage > allUsers.length - 1) {
@@ -20,6 +23,7 @@ const Pagination = ({ setPage, page }: IProps) => {
     });
   };
   const prevPage = () => {
+    dispatch(openModal(false));
     setPage((oldPage) => {
       let prevPage = oldPage - 1;
       if (prevPage < 0) {
@@ -30,6 +34,7 @@ const Pagination = ({ setPage, page }: IProps) => {
   };
 
   const handlePage = (index: number) => {
+    dispatch(openModal(false));
     setPage(index);
   };
 
