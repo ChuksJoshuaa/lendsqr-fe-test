@@ -6,11 +6,11 @@ import { BsBell } from "react-icons/bs";
 import { BiChevronDown } from "react-icons/bi";
 import { getUser } from "../utils/localStorage";
 import { useAppDispatch } from "../redux/hooks";
-import { openSidebar } from "../redux/features/users/userSlice";
+import { openModal, openSidebar } from "../redux/features/users/userSlice";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -35,7 +35,10 @@ const Navbar = () => {
             src={logoUrl}
             alt="title-logo"
             className="head-image px-3"
-            onClick={() => navigate("/home")}
+            onClick={() => {
+              navigate("/home");
+              dispatch(openModal(false));
+            }}
           />
           <div className="form-group nav-container-search">
             <div className="input-group">

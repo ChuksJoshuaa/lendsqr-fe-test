@@ -17,7 +17,10 @@ interface TableProps {
   setItemSize: React.SetStateAction<string>;
 }
 
-const Table = () => {
+interface IProps {
+  checkPageType: boolean;
+}
+const Table = ({ checkPageType }: IProps) => {
   const { allUsers, loading, showModal } = useAppSelector(
     (state) => state.user
   );
@@ -106,7 +109,7 @@ const Table = () => {
                   <td className="date-joined">{item.status}</td>
                   <td className="date-joined">
                     <div
-                      onClick={() => {
+                      onClickCapture={() => {
                         dispatch(openModal(true));
                         setChosenUser(item.id);
                       }}
@@ -121,7 +124,7 @@ const Table = () => {
             </tbody>
           </table>
         </div>
-        {showModal ? <Modal chosenUser={chosenUser} /> : null}
+        {!checkPageType && showModal ? <Modal chosenUser={chosenUser} /> : null}
       </div>
 
       <div className="mt-4 pagination-container">

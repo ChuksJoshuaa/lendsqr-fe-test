@@ -13,7 +13,7 @@ const Dashboard = () => {
           <h1 className="hold"></h1>
           <h3>Users - Dashboard</h3>
           <Ratings />
-          <Table />
+          <Table checkPageType={true} />
         </div>
       )}
     </Layout>

@@ -9,11 +9,15 @@ import Layout from "../components/Layout";
 import { singleUserUrl } from "../utils/Api";
 import { UserProps } from "../utils/types";
 import { UsersData } from "../utils/userData";
+import { useAppDispatch } from "../redux/hooks";
+import { openModal } from "../redux/features/users/userSlice";
 
 const SinglePage = () => {
   const { id } = useParams();
   const [singleData, setSingleData] = useState<UserProps>({} as UserProps);
-  const [selectedOption, setSelectedOption] = useState("General Details");
+  const [selectedOption, setSelectedOption] =
+    useState<string>("General Details");
+  const dispatch = useAppDispatch();
 
   const userId = Number(id);
 
@@ -51,7 +55,13 @@ const SinglePage = () => {
     <Layout useClass={false} changeHeight={false} checkPageType={false}>
       <div className="single-page-container">
         <h3 className="hold">
-          <div className="d-flex mb-3" onClick={() => navigate("/home")}>
+          <div
+            className="d-flex mb-3"
+            onClick={() => {
+              navigate("/home");
+              dispatch(openModal(false));
+            }}
+          >
             <BsArrowLeft className="fs-6" />
             <h3 className="mx-3 fs-6">Back to Users</h3>
           </div>

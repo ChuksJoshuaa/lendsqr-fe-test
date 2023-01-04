@@ -13,7 +13,7 @@ const Home = () => {
           <h1 className="hold"></h1>
           <h3>Users - Home</h3>
           <Ratings />
-          <Table />
+          <Table checkPageType={false} />
         </div>
       )}
     </Layout>

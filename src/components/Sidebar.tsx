@@ -3,7 +3,7 @@ import { BiChevronDown, BiShoppingBag } from "react-icons/bi";
 import { BsHouseDoorFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import { openSidebar } from "../redux/features/users/userSlice";
+import { openModal, openSidebar } from "../redux/features/users/userSlice";
 import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
 
@@ -33,9 +33,10 @@ const Sidebar: React.FC<SidebarProps> = ({ changeHeight, checkPageType }) => {
           className={`sidebar-container-head mt-3 ${
             selectedOption === "dashboard" ? "dashboard" : ""
           }`}
-          onClick={() => {
+          onClickCapture={() => {
             setSelectedOption("dashboard");
             navigate("/dashboard");
+            dispatch(openModal(false));
           }}
         >
           <BsHouseDoorFill className="dash" />
@@ -52,9 +53,10 @@ const Sidebar: React.FC<SidebarProps> = ({ changeHeight, checkPageType }) => {
                 <NavLink
                   to={`${link.name === "Users" ? "/home" : ""}`}
                   key={link.name}
-                  onClick={() => {
+                  onClickCapture={() => {
                     setSelectedOption(link.name);
                     dispatch(openSidebar(false));
+                    dispatch(openModal(false));
                   }}
                   style={() => ({
                     backgroundColor:
