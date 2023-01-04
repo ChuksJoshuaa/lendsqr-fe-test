@@ -11,10 +11,16 @@ import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
 import { getUser } from "../utils/localStorage";
 
-const MobileSidebar = () => {
+interface MobileSidebarProps {
+  checkPageType: boolean;
+}
+
+const MobileSidebar = ({ checkPageType }: MobileSidebarProps) => {
   const dispatch = useDispatch();
 
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(
+    `${checkPageType ? "dashboard" : "Users"}`
+  );
   const [selectedOption, setSelectedOption] = useState("Users");
   const navigate = useNavigate();
   let avatar = getUser()?.avatar;

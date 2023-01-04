@@ -9,10 +9,13 @@ import { links } from "../utils/sidebarData";
 
 interface SidebarProps {
   changeHeight: boolean;
+  checkPageType: boolean;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ changeHeight }) => {
-  const [selectedOption, setSelectedOption] = useState("Users");
+const Sidebar: React.FC<SidebarProps> = ({ changeHeight, checkPageType }) => {
+  const [selectedOption, setSelectedOption] = useState(
+    `${checkPageType ? "dashboard" : "Users"}`
+  );
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
@@ -32,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ changeHeight }) => {
           }`}
           onClick={() => {
             setSelectedOption("dashboard");
-            navigate("/home");
+            navigate("/dashboard");
           }}
         >
           <BsHouseDoorFill className="dash" />

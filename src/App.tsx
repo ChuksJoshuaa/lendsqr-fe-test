@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Error, Home, Login, SinglePage } from "./pages";
+import { Dashboard, Error, Home, Login, SinglePage } from "./pages";
 import {
   Loader,
   saveUsers,
@@ -43,7 +43,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
-
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/single-user/:id" element={<SinglePage />} />
           <Route path="*" element={<Error />} />
         </Routes>

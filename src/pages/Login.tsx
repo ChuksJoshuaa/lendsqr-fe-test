@@ -77,7 +77,7 @@ const Login = () => {
     let name = checkUser()!.userName;
 
     saveUser(id, name, email, avatar);
-    navigate("/home");
+    navigate("/dashboard");
   };
   return (
     <div className="grid-container">
