@@ -290,3 +290,15 @@ $main-text-color: #213f7d;
     }
 }
 
+
+.filter-modal-container {
+    position: absolute;
+    top: 43%;
+    left: 5%;
+    background-color: $primary-color;
+    z-index: 40;
+    box-shadow: $box-light-shadow;
+    height: auto;
+    width: 250px;
+}
+

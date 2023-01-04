@@ -66,3 +66,8 @@ export interface NewUserProps {
   dateJoined: string;
   status: string;
 }
+
+export interface FilterOrganizationProps {
+  orgName: string;
+  status: string;
+}

@@ -1,7 +1,7 @@
 import { AiOutlineEye } from "react-icons/ai";
 import { BiUserCheck } from "react-icons/bi";
 import { FiUserX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { openModal } from "../redux/features/users/userSlice";
 import { useAppDispatch } from "../redux/hooks";
 
@@ -11,18 +11,21 @@ interface ModalProps {
 
 const Modal = ({ chosenUser }: ModalProps) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   return (
     <div className="modal-container">
       <div className="modal-container-head">
         <div className="modal-container-head-body">
-          <Link
-            to={`/single-user/${chosenUser}`}
+          <div
             className="modal-head"
-            onClickCapture={() => dispatch(openModal(false))}
+            onClickCapture={() => {
+              dispatch(openModal(false));
+              navigate(`/single-user/${chosenUser}`);
+            }}
           >
             <AiOutlineEye className="modal-icon" />
             <h3>View Details</h3>
-          </Link>
+          </div>
           <div
             className="modal-head"
             onClickCapture={() => dispatch(openModal(false))}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AiOutlineMore } from "react-icons/ai";
 import { FiWifi } from "react-icons/fi";
-import { Modal } from "./index";
+import { FilterModal, Modal } from "./index";
 import { openModal } from "../redux/features/users/userSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { changeTime } from "../utils/conversions";
@@ -125,6 +125,7 @@ const Table = ({ checkPageType }: IProps) => {
           </table>
         </div>
         {!checkPageType && showModal ? <Modal chosenUser={chosenUser} /> : null}
+        {!checkPageType && <FilterModal />}
       </div>
 
       <div className="mt-4 pagination-container">
