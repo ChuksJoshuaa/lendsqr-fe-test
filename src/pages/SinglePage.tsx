@@ -6,7 +6,7 @@ import { TbCurrencyNaira } from "react-icons/tb";
 import { useNavigate, useParams } from "react-router-dom";
 import { Loader, PersonalInformation } from "../components";
 import Layout from "../components/Layout";
-import { singleUserUrl } from "../utils/link";
+import { singleUserUrl } from "../utils/Api";
 import { UserProps } from "../utils/types";
 import { UsersData } from "../utils/userData";
 

@@ -9,7 +9,8 @@ import {
 } from "./redux/features/users/userSlice";
 import { useAppDispatch } from "./redux/hooks";
 import paginate from "./utils/conversions";
-import { fetchUrl, linkData } from "./utils/link";
+import { fetchUrl } from "./utils/Api";
+import { linkData } from "./utils/link";
 
 function App() {
   const dispatch = useAppDispatch();
