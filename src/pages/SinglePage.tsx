@@ -12,7 +12,7 @@ import { UsersData } from "../utils/userData";
 
 const SinglePage = () => {
   const { id } = useParams();
-  const [singleData, setSingleData] = useState<UserProps | any>({});
+  const [singleData, setSingleData] = useState<UserProps>({} as UserProps);
   const [selectedOption, setSelectedOption] = useState("General Details");
 
   const userId = Number(id);
@@ -40,7 +40,7 @@ const SinglePage = () => {
 
   if (Object.keys(singleData).length === 0)
     return (
-      <Layout useClass={false}>
+      <Layout useClass={false} changeHeight={true}>
         <div className="single-page-container">
           <Loader />
         </div>
@@ -48,7 +48,7 @@ const SinglePage = () => {
     );
 
   return (
-    <Layout useClass={false}>
+    <Layout useClass={false} changeHeight={false}>
       <div className="single-page-container">
         <h3 className="hold">
           <div className="d-flex mb-3" onClick={() => navigate("/home")}>
@@ -121,7 +121,7 @@ const SinglePage = () => {
             </div>
           </div>
 
-          <PersonalInformation />
+          <PersonalInformation singleData={singleData} />
         </h3>
       </div>
     </Layout>

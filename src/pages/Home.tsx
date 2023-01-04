@@ -5,7 +5,7 @@ import { useAppSelector } from "../redux/hooks";
 const Home = () => {
   const { loading } = useAppSelector((state) => state.user);
   return (
-    <Layout useClass={true}>
+    <Layout useClass={true} changeHeight={true}>
       {loading ? (
         <Loader />
       ) : (

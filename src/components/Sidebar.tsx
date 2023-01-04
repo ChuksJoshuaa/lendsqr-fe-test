@@ -7,12 +7,15 @@ import { openSidebar } from "../redux/features/users/userSlice";
 import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
 
-const Sidebar = () => {
+const Sidebar = ({ changeHeight }: any) => {
   const [selectedOption, setSelectedOption] = useState("Users");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
-    <div className="sidebar-container show-sidebar">
+    <div
+      className="sidebar-container show-sidebar"
+      style={{ height: `${changeHeight === true ? "1020px" : "1350px"}` }}
+    >
       <div className="pt-3">
         <div className="sidebar-container-head">
           <BiShoppingBag className="bag" />
