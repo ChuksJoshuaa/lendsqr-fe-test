@@ -1,7 +1,21 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
+import { getUser } from "../utils/localStorage";
 
 const Error = () => {
+  const navigate = useNavigate();
+
+  const CheckUser = () => {
+    const userEmail = getUser()?.email;
+    if (!userEmail) {
+      navigate("/");
+    }
+  };
+
+  useEffect(() => {
+    CheckUser();
+  });
   return (
     <Layout useClass={true} changeHeight={false} checkPageType={true}>
       <div className="page-100">

@@ -10,7 +10,8 @@ import { singleUserUrl } from "../utils/Api";
 import { UserProps } from "../utils/types";
 import { UsersData } from "../utils/userData";
 import { useAppDispatch } from "../redux/hooks";
-import { openModal } from "../redux/features/users/userSlice";
+import { openModal, showError } from "../redux/features/users/userSlice";
+import { getUser } from "../utils/localStorage";
 
 const SinglePage = () => {
   const { id } = useParams();
@@ -18,6 +19,7 @@ const SinglePage = () => {
   const [selectedOption, setSelectedOption] =
     useState<string>("General Details");
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const userId = Number(id);
 
@@ -36,11 +38,22 @@ const SinglePage = () => {
       console.log(error);
     }
   };
+
+  const CheckUser = () => {
+    const userEmail = getUser()?.email;
+    if (!userEmail) {
+      navigate("/");
+      dispatch(showError(true));
+    }
+  };
+
+  useEffect(() => {
+    CheckUser();
+  });
+
   useEffect(() => {
     fetchUser();
   }, [userId]);
-
-  const navigate = useNavigate();
 
   if (Object.keys(singleData).length === 0)
     return (

@@ -5,7 +5,7 @@ import { FilterModal, Modal } from "./index";
 import { openModal } from "../redux/features/users/userSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { changeTime, checkDateRange, colorChange } from "../utils/conversions";
-import { NewUserProps, UserProps } from "../utils/types";
+import { IProps, NewUserProps, UserProps } from "../utils/types";
 import { selectCount } from "../utils/userData";
 import Pagination from "./Pagination";
 
@@ -17,12 +17,12 @@ interface TableProps {
   setItemSize: React.SetStateAction<string>;
 }
 
-interface IProps {
+interface IIProps {
   checkPageType: boolean;
 }
-const Table = ({ checkPageType }: IProps) => {
+const Table = ({ checkPageType }: IIProps) => {
   const { allUsers, loading, showModal } = useAppSelector(
-    (state) => state.user
+    (state): IProps => state.user
   );
   const [followers, setFollowers] = useState([] as TableProps["followers"]);
   const [page, setPage] = useState(0);
