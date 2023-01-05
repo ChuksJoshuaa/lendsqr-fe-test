@@ -5,9 +5,7 @@
 First, install the package and run the development server:
 
 ```bash
-npm install
-npm run dev
+npm install && npm run dev
 # or
-yarn install
-yarn dev
+yarn install && yarn dev
 ```
