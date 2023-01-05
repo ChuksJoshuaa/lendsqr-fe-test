@@ -1,13 +1,7 @@
-import { Dispatch } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { openModal } from "../redux/features/users/userSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { IProps } from "../utils/types";
-
-interface PaginationProps {
-  setPage: Dispatch<React.SetStateAction<number>>;
-  page: React.SetStateAction<number>;
-}
+import { IProps, PaginationProps } from "../utils/types";
 
 const Pagination = ({ setPage, page }: PaginationProps) => {
   const { allUsers, loading } = useAppSelector((state): IProps => state.user);

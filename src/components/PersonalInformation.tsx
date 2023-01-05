@@ -1,11 +1,7 @@
 import { TbCurrencyNaira } from "react-icons/tb";
-import { UserProps } from "../utils/types";
+import { PersonalInformationProps } from "../utils/types";
 
-interface IProps {
-  singleData: UserProps;
-}
-
-const PersonalInformation = ({ singleData }: IProps) => {
+const PersonalInformation = ({ singleData }: PersonalInformationProps) => {
   return (
     <div className="personal-information">
       <div className="personal-information-head">

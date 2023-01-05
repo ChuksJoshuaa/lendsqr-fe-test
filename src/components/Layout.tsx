@@ -1,14 +1,7 @@
 import { FC } from "react";
 import { MobileSidebar, Navbar, Sidebar } from "./index";
 import { useAppSelector } from "../redux/hooks";
-import { IProps } from "../utils/types";
-
-interface LayoutProps {
-  children: any;
-  useClass: boolean;
-  changeHeight: boolean;
-  checkPageType: boolean;
-}
+import { IProps, LayoutProps } from "../utils/types";
 
 const Layout: FC<LayoutProps> = ({
   children,

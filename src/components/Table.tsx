@@ -1,26 +1,15 @@
 import { useEffect, useState } from "react";
 import { AiOutlineMore } from "react-icons/ai";
 import { FiWifi } from "react-icons/fi";
-import { FilterModal, Modal } from "./index";
 import { openModal } from "../redux/features/users/userSlice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { changeTime, checkDateRange, colorChange } from "../utils/conversions";
-import { IProps, NewUserProps, UserProps } from "../utils/types";
+import { IProps, NewUserProps, TableIProps, TableProps } from "../utils/types";
 import { selectCount } from "../utils/userData";
+import { FilterModal, Modal } from "./index";
 import Pagination from "./Pagination";
 
-interface TableProps {
-  followers: UserProps[] | [];
-  setFollowers: React.SetStateAction<UserProps[] | any>;
-  itemSize: string;
-  chosenUser: string;
-  setItemSize: React.SetStateAction<string>;
-}
-
-interface IIProps {
-  checkPageType: boolean;
-}
-const Table = ({ checkPageType }: IIProps) => {
+const Table = ({ checkPageType }: TableIProps) => {
   const { allUsers, loading, showModal } = useAppSelector(
     (state): IProps => state.user
   );

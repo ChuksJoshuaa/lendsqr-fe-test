@@ -72,3 +72,44 @@ export interface FilterOrganizationProps {
   orgName: string;
   status: string;
 }
+
+export interface LayoutProps {
+  children: any;
+  useClass: boolean;
+  changeHeight: boolean;
+  checkPageType: boolean;
+}
+
+export interface MobileSidebarProps {
+  checkPageType: boolean;
+}
+
+export interface ModalProps {
+  chosenUser: string;
+}
+
+export interface PaginationProps {
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  page: React.SetStateAction<number>;
+}
+
+export interface PersonalInformationProps {
+  singleData: UserProps;
+}
+
+export interface SidebarProps {
+  changeHeight: boolean;
+  checkPageType: boolean;
+}
+
+export interface TableProps {
+  followers: UserProps[] | [];
+  setFollowers: React.SetStateAction<UserProps[] | any>;
+  itemSize: string;
+  chosenUser: string;
+  setItemSize: React.SetStateAction<string>;
+}
+
+export interface TableIProps {
+  checkPageType: boolean;
+}

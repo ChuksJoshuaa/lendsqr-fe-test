@@ -10,10 +10,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
 import { getUser } from "../utils/localStorage";
-
-interface MobileSidebarProps {
-  checkPageType: boolean;
-}
+import { MobileSidebarProps } from "../utils/types";
 
 const MobileSidebar = ({ checkPageType }: MobileSidebarProps) => {
   const dispatch = useDispatch();

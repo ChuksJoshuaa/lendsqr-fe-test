@@ -4,10 +4,7 @@ import { FiUserX } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { openModal } from "../redux/features/users/userSlice";
 import { useAppDispatch } from "../redux/hooks";
-
-interface ModalProps {
-  chosenUser: string;
-}
+import { ModalProps } from "../utils/types";
 
 const Modal = ({ chosenUser }: ModalProps) => {
   const dispatch = useAppDispatch();

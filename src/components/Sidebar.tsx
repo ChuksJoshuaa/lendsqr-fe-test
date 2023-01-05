@@ -6,11 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { openModal, openSidebar } from "../redux/features/users/userSlice";
 import { activeLink, normalLink } from "../utils/link";
 import { links } from "../utils/sidebarData";
-
-interface SidebarProps {
-  changeHeight: boolean;
-  checkPageType: boolean;
-}
+import { SidebarProps } from "../utils/types";
 
 const Sidebar: React.FC<SidebarProps> = ({ changeHeight, checkPageType }) => {
   const [selectedOption, setSelectedOption] = useState(
