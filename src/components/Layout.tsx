@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { MobileSidebar, Navbar, Sidebar } from "./index";
 import { useAppSelector } from "../redux/hooks";
+import { IProps } from "../utils/types";
 
 interface LayoutProps {
   children: any;
@@ -15,7 +16,7 @@ const Layout: FC<LayoutProps> = ({
   changeHeight,
   checkPageType,
 }) => {
-  const { isSidebarOpen } = useAppSelector((state) => state.user);
+  const { isSidebarOpen } = useAppSelector((state): IProps => state.user);
 
   return (
     <>

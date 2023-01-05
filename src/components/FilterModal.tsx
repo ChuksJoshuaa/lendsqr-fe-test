@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAppSelector } from "../redux/hooks";
-import { FilterOrganizationProps } from "../utils/types";
+import { FilterOrganizationProps, IProps } from "../utils/types";
 import { statusData } from "../utils/userData";
 
 const FilterModal = () => {
@@ -11,7 +11,7 @@ const FilterModal = () => {
   const [status, setStatus] = useState("");
   const [phone, setPhone] = useState("");
 
-  const { loginUsers } = useAppSelector((state) => state.user);
+  const { loginUsers } = useAppSelector((state): IProps => state.user);
 
   const myOption = () => {
     let myArray: FilterOrganizationProps[] = [];
