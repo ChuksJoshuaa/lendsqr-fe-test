@@ -6,6 +6,8 @@ import MobileSidebar from "./MobileSidebar";
 import Table from "./Table";
 import Loader from "./Loader";
 import PersonalInformation from "./PersonalInformation";
+import FilterModal from "./FilterModal";
+import Modal from "./Modal";
 
 export {
   Navbar,
@@ -16,4 +18,6 @@ export {
   Table,
   Loader,
   PersonalInformation,
+  FilterModal,
+  Modal,
 };

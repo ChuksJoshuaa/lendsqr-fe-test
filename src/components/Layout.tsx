@@ -1,24 +1,29 @@
 import { FC } from "react";
 import { MobileSidebar, Navbar, Sidebar } from "./index";
 import { useAppSelector } from "../redux/hooks";
+import { IProps, LayoutProps } from "../utils/types";
 
-interface LayoutProps {
-  children: any;
-  useClass: boolean;
-  changeHeight: boolean;
-}
-
-const Layout: FC<LayoutProps> = ({ children, useClass, changeHeight }) => {
-  const { isSidebarOpen } = useAppSelector((state) => state.user);
+const Layout: FC<LayoutProps> = ({
+  children,
+  useClass,
+  changeHeight,
+  checkPageType,
+}) => {
+  const { isSidebarOpen } = useAppSelector((state): IProps => state.user);
 
   return (
     <>
       <Navbar />
-      <div>{isSidebarOpen ? <MobileSidebar /> : null}</div>
+      <div>
+        {isSidebarOpen ? <MobileSidebar checkPageType={checkPageType} /> : null}
+      </div>
       <div>
         <div className="main-container">
           <div>
-            <Sidebar changeHeight={changeHeight} />
+            <Sidebar
+              changeHeight={changeHeight}
+              checkPageType={checkPageType}
+            />
           </div>
           <div className={`${useClass ? "layout-container" : ""}`}>
             {children}

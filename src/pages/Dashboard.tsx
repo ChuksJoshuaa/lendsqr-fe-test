@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { getUser } from "../utils/localStorage";
 import { IProps } from "../utils/types";
 
-const Home = () => {
+const Dashboard = () => {
   const { loading } = useAppSelector((state): IProps => state.user);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -23,20 +23,21 @@ const Home = () => {
   useEffect(() => {
     CheckUser();
   });
+
   return (
-    <Layout useClass={true} changeHeight={true} checkPageType={false}>
+    <Layout useClass={true} changeHeight={true} checkPageType={true}>
       {loading ? (
         <Loader />
       ) : (
         <div className="p-5">
           <h1 className="hold"></h1>
-          <h3>Users - Home</h3>
+          <h3>Users - Dashboard</h3>
           <Ratings />
-          <Table checkPageType={false} />
+          <Table checkPageType={true} />
         </div>
       )}
     </Layout>
   );
 };
 
-export default Home;
+export default Dashboard;
