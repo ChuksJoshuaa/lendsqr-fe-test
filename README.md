@@ -1,10 +1,11 @@
 <h1 align="center">
   Lendsqr
   <br>
-  <img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1672465329/media/download_cdc1sj.jpg" alt="lendsqr logo" title="lendsqr logo" width="300">
+  <hr />
+  <img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1672465329/media/download_cdc1sj.jpg" alt="lendsqr logo" title="lendsqr logo" width="200" height="200px">
   <br>
 </h1>
-<p align="center" style="font-size: 1.2rem;">At Lendsqr, many of our lenders use web apps to reach over half a million customers. Project built with Typescript, React.js, Bootstrap and Scss</p>
+<p align="center" style="font-size: 1.2rem;">At Lendsqr, many of our lenders use web apps to reach over half a million customers</p>
 
 <hr />
 
@@ -63,4 +64,69 @@ they can now access their detailed page
 ```
  Email: Mathias_Gottlieb66@gmail.com
  Password: 123456
+```
+
+## Project-Structure
+
+```bash
+    |-- build
+    |-- node_modules
+    |-- public
+    |-- src
+        |-- components
+              |-- FilterModal.tsx
+              |-- index.tsx
+              |-- Layout.tsx
+              |-- Loader.tsx
+              |-- MobileSidebar.tsx
+              |-- Modal.tsx
+              |-- Navbar.tsx
+              |-- Pagination.tsx
+              |-- PersonalInformation.tsx
+              |-- Ratings.tsx
+              |-- Sidebar.tsx
+              |-- Table.tsx
+        |-- css
+              |-- styles.css
+        |-- pages
+              |-- Dashboard.tsx
+              |-- Error.tsx
+              |-- Home.tsx
+              |-- index.tsx
+              |-- Login.tsx
+              |-- Single.tsx
+        |-- redux
+              |--features
+                    |-- users
+                    |-- userSlice.ts
+              |--hooks.ts
+              |--store.ts
+
+        |-- scss
+              |-- _body.scss
+              |-- _loader.scss
+              |-- _mobile.scss
+              |-- _navbar.scss
+              |-- _body.scss
+              |-- _personal.scss
+              |-- _single.scss
+              |-- styles.scss
+        |-- utils
+              |-- Api.ts
+              |-- conversions.ts
+              |-- image.ts
+              |-- link.ts
+              |-- localStorage.ts
+              |-- ratingsData.tsx
+              |-- sidebarData.tsx
+              |-- types.ts
+              |-- userData.tsx
+        |-- App.tsx
+        |-- index.tsx
+    |-- .gitignore
+    |-- package-lock.json
+    |-- package.json
+    |-- README.md
+    |-- tsconfig.json
+
 ```
