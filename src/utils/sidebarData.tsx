@@ -98,7 +98,7 @@ export const links = [
         icon: <FaScroll />,
       },
       {
-        name: "Repots",
+        name: "Reports",
         icon: <AiOutlineBarChart />,
       },
     ],
