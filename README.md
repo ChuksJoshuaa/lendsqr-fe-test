@@ -2,7 +2,7 @@
   Lendsqr
   <br>
   <hr />
-  <img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1672465329/media/download_cdc1sj.jpg" alt="lendsqr logo" title="lendsqr logo" width="200" height="200px">
+  <img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1672465329/media/download_cdc1sj.jpg" alt="lendsqr logo" title="lendsqr logo" width="200" height="200px">.
   <br>
 </h1>
 <p align="center" style="font-size: 1.2rem;">At Lendsqr, many of our lenders use web apps to reach over half a million customers</p>
